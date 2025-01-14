@@ -91,7 +91,7 @@ const Navbar = () => {
 
         </Link>
 
-        <Link to='/skip-jobs' style={{ textDecoration: 'none' }}>
+        <Link to='/applied-jobs' style={{ textDecoration: 'none' }}>
           <Box sx={{
             display: 'flex', flexDirection: 'column', alignItems: 'center',
             cursor: 'pointer',
