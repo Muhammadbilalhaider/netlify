@@ -54,7 +54,7 @@ const appliedJobs = () => {
           </Typography>
 
           <Box sx={{bgcolor:'rgb(3, 129, 52)',borderRadius:1 }}>
-            <Typography sx={{color:'#fff',p:1}}>
+            <Typography sx={{color:'#fff',p:1,cursor:'pointer'}}>
             Mark as applied
             </Typography>
           </Box>
