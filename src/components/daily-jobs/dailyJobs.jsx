@@ -1,6 +1,6 @@
 import React from 'react';
 import jobs from '../../asset/jobs.svg';
-import { Typography, Box } from '@mui/material';
+import { Typography, Box, Toolbar, Button } from '@mui/material';
 
 const dailyJobs = () => {
   const keyResponsibilities = [
@@ -25,13 +25,14 @@ const dailyJobs = () => {
         justifyContent: 'center',
         flexDirection: 'column',
         alignItems: 'center',
-        px: { xs: 2, md: 5 }, 
+        px: { xs: 2, md: 5 },
       }}
     >
       <Box sx={{ display: 'flex', justifyContent: 'center', mt: 10, mb: 15, flexDirection: 'column', alignItems: 'center' }}>
+
         <Box sx={{ width: '100%', display: 'flex', justifyContent: 'flex-end', mb: 2, mr: 20, cursor: 'pointer' }}>
           <Typography variant="h6" sx={{ textAlign: 'right' }}>
-            Today's Job
+            today's job
           </Typography>
         </Box>
 
@@ -58,28 +59,76 @@ const dailyJobs = () => {
             Journeyman Plumber
           </Typography>
 
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <img src={jobs} alt="" style={{ width: '30px', height: '30px' }} />
-              <Typography sx={{ fontSize: '14px', marginLeft: '10px' }}>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent:'space-between',
+              alignItems:'self-start',
+              width: '70%',
+            }}
+          >
+            <Box sx={{ display: 'flex', alignItems: 'center', minWidth: '150px' }}>
+              <img
+                src={jobs}
+                alt=""
+                style={{ width: '30px', height: '30px', flexShrink: 0 }}
+              />
+              <Typography
+                sx={{ fontSize: '14px', marginLeft: '10px', whiteSpace: 'nowrap' }}
+              >
                 G&C Plumbing & Heating LLC
               </Typography>
             </Box>
 
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <img src={jobs} alt="" style={{ width: '30px', height: '30px' }} />
-              <Typography sx={{ fontSize: '14px', marginLeft: '10px' }}>
+            <Box sx={{ display: 'flex',  alignItems: 'center', minWidth: '150px' }}>
+              <img
+                src={jobs}
+                alt=""
+                style={{ width: '30px', height: '30px', flexShrink: 0 }}
+              />
+              <Typography
+                sx={{ fontSize: '14px', marginLeft: '10px', whiteSpace: 'nowrap' }}
+              >
                 Bellingham, MA, US
               </Typography>
             </Box>
-
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <img src={jobs} alt="" style={{ width: '30px', height: '30px' }} />
-              <Typography sx={{ fontSize: '14px', marginLeft: '10px' }}>
+          </Box>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent:'space-between',
+              width: '70%',
+            }}
+          >
+            <Box sx={{ display: 'flex', alignItems: 'center', minWidth: '150px' }}>
+              <img
+                src={jobs}
+                alt=""
+                style={{ width: '30px', height: '30px', flexShrink: 0 }}
+              />
+              <Typography
+                sx={{ fontSize: '14px', marginLeft: '10px', whiteSpace: 'nowrap' }}
+              >
                 $72,800 - $115,000
               </Typography>
             </Box>
+
+            <Box sx={{ display: 'flex',  alignItems: 'center', minWidth: '150px' }}>
+              <img
+                src={jobs}
+                alt=""
+                style={{ width: '30px', height: '30px', flexShrink: 0 }}
+              />
+              <Typography
+                sx={{ fontSize: '14px', marginLeft: '10px', whiteSpace: 'nowrap' }}
+              >
+              $72,800 - $115,000
+              </Typography>
+            </Box>
           </Box>
+        
 
           <Box sx={{ width: '100%', my: 2 }}>
             <hr style={{ border: '1px solid #A9A9A9', width: '100%' }} />
@@ -128,7 +177,7 @@ const dailyJobs = () => {
           <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1, mt: 3 }}>
             Soft Skills
           </Typography>
-          <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', mt: 1 }}>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', mt: 1 }}>
             <Box sx={{ bgcolor: '#F3E4D5', p: 1, borderRadius: 1 }}>
               <Typography sx={{ color: '#F0874B', textAlign: 'center' }}>Customer-focused attitude</Typography>
             </Box>
@@ -139,16 +188,50 @@ const dailyJobs = () => {
           <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1, mt: 3 }}>
             Required Technologies
           </Typography>
-          <Box sx={{ width: '100%' }}>
-            <hr style={{ border: '1px solid #A9A9A9', width: '100%' }} />
-          </Box>
-          <Box sx={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
-            <Typography sx={{ fontWeight: 'semibold' }}>
-              date
-            </Typography>
-          </Box>
+
+
 
         </Box>
+
+      </Box>
+      <Box
+        sx={{
+          position: 'fixed',
+          bottom: 50,
+
+          width: '100%',
+          bgcolor: '#fff',
+          boxShadow: 2,
+          py: 2,
+        }}
+      >
+        <Toolbar
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+
+            px: { xs: 2, md: 5 },
+          }}
+        >
+          <Button
+            variant="outlined"
+            color="warning"
+            sx={{
+              px: 3, mr: 1
+            }}
+          >
+            Skip
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            sx={{
+              px: 3, ml: 1, bgcolor: 'rgb(3, 129, 52)'
+            }}
+          >
+            Match
+          </Button>
+        </Toolbar>
       </Box>
     </Box>
   );
