@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Button, Typography } from '@mui/material';
 import jobs from '../../asset/jobs.svg';
-
+import arrow from '../../asset/arrow.svg'
 const skipjobs = () => {
   return (
     <Box
@@ -60,21 +60,25 @@ const skipjobs = () => {
                   variant="outlined"
                   color="warning"
                   sx={{
-                    px: 3, mr: 1,borderRadius:2
+                    px: 3, mr: 1,borderRadius:2,textTransform:'none'
                   }}
                 >
-                  Skip
+                  Un-skip
                 </Button>
                 <Button
                   variant="contained"
                   color="primary"
                   sx={{
-                    px: 3, ml: 1, bgcolor: 'rgb(3, 129, 52)',borderRadius:2
+                    px: 3, ml: 1, bgcolor: 'rgb(3, 129, 52)',borderRadius:2,textTransform:'none'
                   }}
                 >
                   Match
                 </Button>
+             <Box sx={{rotate:180}} >
+             <img  width='36px' src={arrow} alt='' />
+             </Box>
               </Box>
+
             </Box>
           </Box>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
