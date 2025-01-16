@@ -10,7 +10,7 @@ import { Box } from '@mui/material';
 function App() {
   return (
   
-    <Box sx={{ backgroundColor: '#0021', minHeight: '100vh' }}>
+    <Box sx={{ backgroundColor: 'rgb(226, 226, 226)', minHeight: '100vh' }}>
      
       <Router >
       <Navbar />

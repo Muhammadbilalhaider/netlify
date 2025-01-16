@@ -28,7 +28,7 @@ const dailyJobs = () => {
         px: { xs: 2, md: 5 },
       }}
     >
-      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 10, mb: 15, flexDirection: 'column', alignItems: 'center' }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 10, mb: 25, flexDirection: 'column', alignItems: 'center' }}>
 
         <Box sx={{ width: '100%', display: 'flex', justifyContent: 'flex-end', mb: 2, mr: 20, cursor: 'pointer' }}>
           <Typography variant="h6" sx={{ textAlign: 'right' }}>

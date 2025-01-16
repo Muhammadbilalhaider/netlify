@@ -1,9 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Button, MenuItem, Select, Typography } from '@mui/material'
 import jobs from '../../asset/jobs.svg';
 import arrow from '../../asset/arrow.svg'
 
-const appliedJobs = () => {
+const AppliedJobs = () => {
+
+  const [jobOption, setJobOption] = useState([]);
+  const [selectedOption, setSelectedOption] = useState('');
+  const optionss = ['Applied', 'hone screen', 'Interview', 'Offer', 'Rejected']
+
+  useEffect(() => {
+    setJobOption(optionss);
+    setSelectedOption(optionss[0])
+  }, []);
+
+
+  const handleChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
+
+
+
   return (
     <Box
       sx={{
@@ -60,33 +78,33 @@ const appliedJobs = () => {
                   borderRadius: 1,
                   color: '#000',
                   fontSize: '18px',
-                  width:'200px',
-                  justifyContent:'center',
-                  alignItems:'center',
-                  display:'flex',
-                  flexDirection:'row'
+                  width: '200px',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  display: 'flex',
+                  flexDirection: 'row'
                 }}
               >
                 <Select
-              
+                  value={selectedOption}
+                  onChange={handleChange}
                   sx={{
-                    textTransform: 'none', 
+                    textTransform: 'none',
                     fontSize: '14px',
                     color: '#000',
-                    width: '100%', 
-                    borderRadius:3
+                    width: '100%',
+                    borderRadius: 3
                   }}
                 >
-                  <MenuItem value="applies">Applies</MenuItem>
-                  <MenuItem value="Phone screen">Phone screen</MenuItem>
-                  <MenuItem value="Interview">Interview</MenuItem>
-                  <MenuItem value="Offer">Offer</MenuItem>
-                  <MenuItem value="Rejected">Rejected</MenuItem>
+                  {jobOption.map((value, index) =>
+                    <MenuItem key={index} value={value}>    {value}</MenuItem>
+                  )}
+
                 </Select>
-  <Box sx={{rotate:180}} >
-             <img  width='36px' src={arrow} alt='' />
-             </Box>
-        
+                <Box sx={{ rotate: 180 }} >
+                  <img width='36px' src={arrow} alt='' />
+                </Box>
+
 
               </Box>
             </Box>
@@ -120,4 +138,4 @@ const appliedJobs = () => {
   )
 }
 
-export default appliedJobs
+export default AppliedJobs
